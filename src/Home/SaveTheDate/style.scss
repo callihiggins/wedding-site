@@ -1,0 +1,164 @@
+$green: #1a3324;
+$beige: #D2AD89;
+
+.container {
+  height: calc(320vh - 94px); //header height
+  background-color: #b8c9cc;
+}
+
+.fillBeige {
+  fill: $beige;
+}
+
+.middlePointText {
+  width: 70%;
+  left: 15%;
+  position: fixed;
+  bottom: 0;
+  opacity: 0;
+}
+
+.stickyTextTrigger {
+  margin-top: 50vh;
+}
+
+.eventInfo {
+  height: 100vh;
+  background: $green;
+  margin-top: 150vh;
+  position: relative;
+}
+
+.lastPage {
+  position: relative;
+  max-width: 1100px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.palmScene {
+  position: absolute;
+  bottom: 0;
+  left: 3%;
+  width: 35%;
+
+  svg {
+    height: 90vh;
+    width: auto;
+  }
+}
+
+.textContainer {
+  float: right;
+  width: 50%;
+  text-align: right;
+  color: $beige;
+  margin-top: 5vh;
+  margin-right: 30px;
+  font-weight: 700;
+  background: $green;
+
+  .date {
+    font-family: interstate-condensed, sans-serif;
+    font-size: 250px;
+  }
+
+  .city {
+    font-family: interstate-condensed, sans-serif;
+    font-size: 85px;
+    text-transform: uppercase;
+    line-height: 100px;
+    margin-top: 5vh;
+  }
+}
+
+.bottom-menu {
+  display: flex;
+  float: right;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  vertical-align: middle;
+  width: 20%;
+  min-width: 200px;
+  position: absolute;
+  bottom: 13%;
+  right: 30px;
+
+  .menuItem a {
+    color: $beige;
+    border-bottom: 1px solid $beige;
+  }
+}
+
+.formalInvite {
+  width: 20%;
+  position: absolute;
+  bottom: 0;
+  right: 30px;
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+  .palmScene { 
+    svg {
+      height: 70vh;
+    }
+  }
+
+  .bottom-menu {
+    bottom: 20px;
+  }
+
+}
+
+@media screen and (max-width: 850px) {
+  .middlePointText {
+    bottom: -125px;
+  }
+
+  .textContainer {
+    width: calc(100% - 30px);
+    margin: 50px 15px 0 15px;
+
+    .date {
+      font-size: 220px;
+    }
+  }
+
+  .bottom-menu {
+    width: 30%;
+    bottom: 20px;
+  }
+
+  .formalInvite {
+    width: 40%;
+  }
+
+  .palmScene { 
+    svg {
+      height: auto;
+    }
+  }
+
+  .formalInvite {
+    bottom: 75px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .middlePointText {
+    bottom: -50px;
+  }
+
+  .formalInvite {
+    width: 70%;
+  }
+
+  .bottom-menu {
+    width: 80%;
+  }
+
+  .palmScene {
+    display: none;
+  }
+}

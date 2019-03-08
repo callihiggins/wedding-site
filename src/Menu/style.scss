@@ -1,0 +1,164 @@
+$green: #1a3324;
+$mustard: #ffde40;
+$highlight: $mustard;
+
+$duration: .2s;
+$distance: 8px;
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+
+.nav {
+  margin: 20px 15px 10px 15px;
+  width: calc(50% - 130px);
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  vertical-align: middle;
+  padding: 0;
+}
+
+.logo {
+  margin-top: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.logo {
+  width: 200px;
+  text-align: center;
+
+  img {
+    width: 100px;
+    margin-top: -10px;
+  }
+}
+
+.hamburger-menu {
+  display: none;
+}
+
+.menuItem {
+  font-family: 'abadi-condensed', sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0; right: 0;
+    height: 2px;
+    background-color: $highlight;
+  }
+  &:before {
+    opacity: 0;
+    transform: translateY(- $distance);
+    transition: transform 0s $easeOutBack, opacity 0s;
+  }
+  &:after {
+    opacity: 0;
+    transform: translateY($distance/2);
+    transition: transform $duration $easeOutBack, opacity $duration;
+  }
+  &.active,
+  &:hover,
+  &:focus {
+    &:before,
+    &:after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    &:before {
+      transition: transform $duration $easeOutBack, opacity $duration;
+    }
+    &:after {
+      transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+
+  $highlight: black;
+
+  .logo {
+    display: block;
+    width: 100px;
+    text-align: left;
+    margin-left: 15px;
+    margin-top: 0;
+    cursor: pointer;
+
+    img {
+      width: 75px;
+    }
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .bm-burger-button {
+    width: 45px;
+    display: inline-block;
+    right: 10px;
+    position: fixed;
+    top: 10px;
+  }
+
+  .bm-burger-bars {
+    background: black;
+    height: 3px;
+  }
+
+  .bm-burger-bars-hover {
+    background: $mustard;
+  }
+
+  .bm-menu {
+    background: $mustard;
+    color: black;
+    padding: 20px;
+  }
+
+  .bm-menu-wrap {
+    top: 0;
+  }
+
+  .bm-item-list {
+    margin-top: 60px;
+  }
+
+  .bm-item {
+    display: inline-block;
+    font-size: 20px;
+  }
+
+  .bm-overlay {
+    display: none;
+  }
+
+  .bm-cross {
+    background: black;
+  }
+  
+
+  .menuItem {
+    margin: 25px 0;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+
+}
