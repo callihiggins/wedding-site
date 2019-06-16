@@ -15,7 +15,7 @@ export default function sketch (p) {
     let pct = 0;
   
     p.setup = function () {
-      p.createCanvas(p.windowWidth, innerHeight());
+      p.createCanvas(p.windowWidth - 15, innerHeight());
       p.imageMode(p.CENTER);
       
       textY = p.height/2;
@@ -36,7 +36,7 @@ export default function sketch (p) {
     };
 
     p.resetDimensions = () => {
-      p.resizeCanvas(p.windowWidth, innerHeight());
+      p.resizeCanvas(p.windowWidth - 15, innerHeight());
       textX = p.width/2  - p.width/16;
       textY = innerHeight()/2;
       planeX = originalPlaneX = p.width/2 +  p.getDimensions(textImage).width/4;

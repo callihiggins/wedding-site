@@ -82,7 +82,7 @@ $beige: #D2AD89;
   width: 20%;
   min-width: 200px;
   position: absolute;
-  bottom: 13%;
+  bottom: 100px;
   right: 30px;
 
   .menuItem a {
@@ -146,8 +146,16 @@ $beige: #D2AD89;
 }
 
 @media screen and (max-width: 500px) {
+  .container {
+    height: calc(310vh - 94px); //header height
+  }
+
   .middlePointText {
     bottom: -50px;
+  }
+
+  .eventInfo {
+    margin-top: 100vh;
   }
 
   .formalInvite {

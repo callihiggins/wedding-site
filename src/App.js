@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import 'airbnb-js-shims';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import ScrollToTop from 'react-router-scroll-top'
 import Menu from './Menu';
