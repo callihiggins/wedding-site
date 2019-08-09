@@ -1,0 +1,261 @@
+$hotpink: #CE446F;
+
+.rsvpContainer {
+  margin: 0 auto;
+  padding: 0 30px 0 30px;
+  max-width: 1100px;
+  width: calc(100% - 60px);
+}
+
+.formContainer {
+  width: 425px;
+  margin: 0 auto;
+  padding: 50px;
+  border: 1px solid black;
+  position: relative;
+}
+
+.formGroup {
+  margin-bottom: 40px;
+  font-size: 20px;
+
+  input[type='text'] {
+    background: none;
+    box-shadow: none;
+    border: 0;
+    border-bottom: 1px solid black;
+    font-size: 22px;
+    width: 400px;
+    font-weight: 300;
+    letter-spacing: .04em;
+    font-family: 'interstate-condensed', sans-serif;
+  }
+}
+
+.label {
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-right: 15px;
+  font-size: 20px;
+  letter-spacing: .02em;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.checkboxGroup {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.checkboxGroup {
+  margin-right: 20px;
+}
+
+.textboxInput {
+  width: 400px;
+}
+
+.rsvp-pageTitle {
+  padding: 60px 0;
+  text-align: center;
+
+  svg {
+    height: 60px;
+  }
+}
+
+.submitButton {
+  background: black;
+  color: white;
+  text-transform: uppercase;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  cursor: pointer;
+}
+
+.inactiveClass {
+  background: #666;
+}
+
+.rsvpPalm {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 85px;
+}
+
+.hidden {
+  display: none;
+}
+
+.radioInput {
+  display: inline-block;
+  margin-right: 25px;
+}
+
+.rsvpDetails {
+  width: 500px;
+  letter-spacing: .02em;
+  font-size: 18px;
+  margin: 30px auto 0 auto;
+  font-style: italic;
+}
+
+.checkboxGroup input[type="checkbox"] {
+  display: none;
+}
+
+.checkboxGroup label {
+  position: relative;
+  display: inline-block;
+  
+  /*16px width of fake checkboxGroup + 6px distance between fake checkboxGroup and text*/
+  padding-left: 25px;
+}
+
+.checkboxGroup label::before,
+.checkboxGroup label::after {
+  position: absolute;
+  content: "";
+  
+  /*Needed for the line-height to take effect*/
+  display: inline-block;
+}
+
+/*Outer box of the fake checkboxGroup*/
+.checkboxGroup label::before{
+  height: 16px;
+  width: 16px;
+  
+  border: 1px solid;
+  left: 0px;
+  
+  /*(24px line-height - 16px height of fake checkboxGroup) / 2 - 1px for the border
+   *to vertically center it.
+   */
+  top: 2px;
+}
+
+/*Checkmark of the fake checkboxGroup*/
+.checkboxGroup label::after {
+  height: 5px;
+  width: 9px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  
+  transform: rotate(-45deg);
+  
+  left: 4px;
+  top: 7px;
+}
+
+.is-error {
+  font-size: 16px;
+  font-weight: 700;
+  color: $hotpink;
+  margin-top: 7px;
+}
+
+/*Hide the checkmark by default*/
+.checkboxGroup input[type="checkbox"] + label::after {
+  content: none;
+}
+
+/*Unhide on the checked state*/
+.checkboxGroup input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+
+.radioButton
+{
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     display: inline-block;
+     position: relative;
+     background-color: #E0C5AD;
+     color: #000;
+     top: 7px;
+     height: 25px;
+     width: 25px;
+     border: 1px solid #000;
+     border-radius: 50px;
+     cursor: pointer;     
+     margin-right: 7px;
+     outline: none;
+}
+.radioButton:checked::before
+{
+     position: absolute;
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 7px;
+     top: 4px;
+     content: '\02143';
+     transform: rotate(40deg);
+}
+.radioButton:hover
+{
+     background-color: #E0C5AD;
+}
+.radioButton:checked
+{
+     background-color: #E0C5AD;
+}
+
+.resultContainer {
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  .title {
+    font-size: 22px;
+  }
+
+  button {
+    margin-top: 50px;
+    background: #000;
+    text-transform: uppercase;
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: .02em;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+    font-family: 'interstate-condensed', sans-serif;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .formContainer {
+    width: 100%;
+    border: 0;
+    padding: 0;
+  }
+
+  .checkboxGroup {
+    margin: 0;
+    display: block;
+    &:last-child {
+      margin-top: 20px;
+    }
+  }
+  .rsvpDetails {
+    width: calc(100% - 60px);
+  }
+
+  .rsvpPalm {
+    display: none;
+  }
+
+  .formGroup input[type='text'] {
+    width: 100%;
+  }
+
+  .rsvpDetails {
+    width: 100%;
+    margin: 0;
+    margin-top: 30px;
+  }
+}

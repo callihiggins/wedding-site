@@ -1,10 +1,20 @@
-import React, { Component, Fragment } from 'react';
-import SaveTheDate from './SaveTheDate';
+import React, { Component } from 'react';
+import palm from '../images/mainPalm.png';
+import CalliLucasText from '../images/calliLucasText';
+import './style.scss';
 
 class Home extends Component {
   render() {
     return (
-      <SaveTheDate />
+      <>
+        <div className={'container'}>
+          <img src={palm} className='mainPalm' />
+          <div className="mainText">
+            <CalliLucasText />
+          </div>
+        </div>
+      </>
+
     );
   }
 }

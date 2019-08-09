@@ -1,28 +1,34 @@
 import React, { Component, Fragment } from 'react';
-import { Link, withRouter } from "react-router-dom";
-import logo from '../images/logo.png';
+import { ExternalLink, Link, withRouter } from "react-router-dom";
 import classnames from 'classnames';
-import './style.scss';
 import { slide as MobileMenu } from 'react-burger-menu'
+import logo from '../images/logo.png';
+import './style.scss';
 import hamburger from '../images/hamburger.svg';
 
 const menuObjects = [
   {
-    name: 'Travel Info',
-    slug: '/travel'
+    name: 'Home',
+    slug: '/',
+    hideOn: '/',
   },
-  // {
-  //   name: 'RSVP',
-  //   slug: '/rsvp',
-  // },
   {
-    name: 'Weekend Details',
+    name: 'Travel Info',
+    slug: '/travel',
+    hideMobile: true,
+  },
+  {
+    name: 'RSVP',
+    slug: '/rsvp',
+  },
+  {
+    name: 'Weekend Events',
     slug: '/details',
   },
-  // {
-  //   name: 'Registry',
-  //   slug: '/registry',
-  // },
+  {
+    name: 'FAQ',
+    slug: '/faq',
+  },
 ];
 
 class Menu extends Component {
@@ -35,29 +41,30 @@ class Menu extends Component {
   };
 
   render() {
-    const links = menuObjects.map(obj => (
-      <li className={classnames('menuItem', {'active': obj.slug === this.props.location.pathname})}>
+    let links = menuObjects.map(obj => (
+      <li className={classnames(
+        'menuItem', 
+        {'active': obj.slug === this.props.location.pathname},
+        {'hideMobile': obj.hideMobile === true  },
+        {'hideDesktop': obj.hideOn === this.props.location.pathname  }
+      )}>
         <Link to={obj.slug} onClick={this.closeMenu}>{obj.name}</Link>
       </li>
     ));
 
-    const numOfMenuItems = menuObjects.length;
-
-    const leftLinks = links.slice(0, numOfMenuItems/2);
-    const rightLinks = links.slice(numOfMenuItems/2, numOfMenuItems);
+    const registry = (
+      <li className={classnames('menuItem', 'hideMobile')}>
+        <a href="https://www.zola.com/registry/calliandlucas" rel="noopener noreferrer" target="_blank">Registry</a>
+      </li>
+    );
+    links.push(registry);
 
     return (
-      <nav>
-        <ul className="nav">
-          {leftLinks}
+      <nav className={classnames({'home': '/' === this.props.location.pathname})}>
+        <ul className='nav'>
+          {links}
         </ul>
-        <div className="logo">
-          <Link to="/"><img src={logo}/></Link>
-        </div>
-        <ul className="nav">
-          {rightLinks}
-        </ul>
-        <div className="hamburger-menu">
+        <div className={classnames('hamburger-menu', {'hide-mobile': '/' === this.props.location.pathname})}>
           <MobileMenu isOpen={this.state.open} customBurgerIcon={ <img src={hamburger} /> } right width={ '50%' } >
             {links}
           </MobileMenu>

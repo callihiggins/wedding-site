@@ -10,28 +10,30 @@
 }
 
 body {
-  background-color: #b8c9cc;
+  background-color: #E0C5AD;;
 }
 
 .app {
-  font-family: interstate-condensed, sans-serif;
-  background-color: #b8c9cc;
+  font-family: 'interstate-condensed', sans-serif;
+  background-color: #E0C5AD;;
   padding: 20px 0;
 }
 
 .app-header {
   width: 100%;
-  position: fixed;
   display: block;
-  background-color: #b8c9cc;
-  top: 0;
+  background-color: #E0C5AD;;
+}
 
+.app-header.home {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
 }
 
 .hide-desktop {
   display: none;
 }
-
 
 @media screen and (max-width: 850px) {
   .hide-desktop {
@@ -44,11 +46,16 @@ body {
 
   .app-header {
     background: white;
-    padding: 20px 0 10px 0;
+    position: fixed;
+    z-index: 10;
   }
 
   .app {
     padding-top: 0;
     font-size: 16px !important;
+  }
+
+  .app-body {
+    padding-top: 70px;
   }
 }

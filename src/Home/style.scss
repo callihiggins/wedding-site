@@ -1,0 +1,49 @@
+$pink : #E0C5AD;
+
+.container {
+  background: $pink;
+  height: 100%;
+  width: 100%;
+}
+
+.mainPalm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  pointer-events: none;
+}
+
+.mainText {
+  position: absolute;
+  bottom: 170px;
+  right: 12%;
+
+  svg {
+    width: auto;
+    height: 60vh;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .mainText {
+    right: 10%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .mainPalm {
+    width: 25%;
+  }
+  .mainText {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    top: 155px;
+    right: auto;
+
+    svg {
+      height: 60vh;
+    }
+  }
+}
