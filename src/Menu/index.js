@@ -18,16 +18,16 @@ const menuObjects = [
     hideMobile: true,
   },
   {
-    name: 'RSVP',
-    slug: '/rsvp',
-  },
-  {
     name: 'Weekend Events',
     slug: '/details',
   },
   {
     name: 'FAQ',
     slug: '/faq',
+  },
+  {
+    name: 'RSVP',
+    slug: '/rsvp',
   },
 ];
 
@@ -65,6 +65,7 @@ class Menu extends Component {
           {links}
         </ul>
         <div className={classnames('hamburger-menu', {'hide-mobile': '/' === this.props.location.pathname})}>
+         <div className="mobile-logo"><Link to='/'>Calli & Lucas</Link></div>
           <MobileMenu isOpen={this.state.open} customBurgerIcon={ <img src={hamburger} /> } right width={ '50%' } >
             {links}
           </MobileMenu>

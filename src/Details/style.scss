@@ -40,7 +40,7 @@
   }
 
   &:first-child {
-    border-right: .5px solid #CE446F;
+    border-right: .5px solid #000;
   }
 
   a {
@@ -90,14 +90,13 @@
   }
   .detailsItem {
     width: calc(100% - 60px);
+    padding: 75px 0;
+    margin: 0 auto;
 
     &:first-child {
-      border-bottom: .5px solid #CE446F;
+      border-bottom: .5px solid #000;
       border-right: 0;
-      padding-bottom: 75px;
-    }
-    &:last-child {
-      padding-top: 75px;
+      padding-top: 30px;
     }
   }
 

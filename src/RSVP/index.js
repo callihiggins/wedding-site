@@ -1,9 +1,11 @@
-import React, { Component, Fragment } from 'react';
-import classnames from 'classnames';
+import React, { Component} from 'react';
 import RSVPText from '../images/rsvpText';
 import Input from './input';
 import Result from './result';
 import './style.scss';
+
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 
 class RSVP extends Component {
   state = {
@@ -22,7 +24,8 @@ class RSVP extends Component {
   /* Creates request to be sent to api */
   buildRequestBody = () => {
     const { fullName, attendingWedding, attendingNextDay, emailAddress, dietaryRestrictions } = this.state;
-    return { data: [{ fullName, attendingWedding, attendingNextDay, emailAddress, dietaryRestrictions }]};
+    var timestamp = new Date().toLocaleString('en-US', {timeZone: 'America/New_York'});
+    return { data: [{ fullName, attendingWedding, attendingNextDay, emailAddress, dietaryRestrictions, timestamp }]};
   }
     
  
@@ -120,6 +123,7 @@ class RSVP extends Component {
       case "showForm":
         return (
           <>
+            <div className="rsvpDetails">Kindly RSVP indivudally for every member of your party by September 1st</div>
             <Input
               handleChange={this.handleChange}
               guestNameValue={this.state.fullName}
@@ -132,7 +136,6 @@ class RSVP extends Component {
               isAttending={this.state.isAttending}
               guestEmailValue={this.state.emailAddress}
             />
-            <div className="rsvpDetails">Kindly RSVP indivudally for every member of your party by September 1st</div>
           </>
         );
 

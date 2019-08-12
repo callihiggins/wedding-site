@@ -56,7 +56,7 @@ $hotpink: #CE446F;
 }
 
 .rsvp-pageTitle {
-  padding: 60px 0;
+  padding: 60px 0 40px 0;
   text-align: center;
 
   svg {
@@ -93,13 +93,16 @@ $hotpink: #CE446F;
 .radioInput {
   display: inline-block;
   margin-right: 25px;
+  &:last-child {
+    margin-top: 10px;
+  }
 }
 
 .rsvpDetails {
   width: 500px;
   letter-spacing: .02em;
   font-size: 18px;
-  margin: 30px auto 0 auto;
+  margin: 0 auto 30px auto;
   font-style: italic;
 }
 
@@ -142,8 +145,8 @@ $hotpink: #CE446F;
 .checkboxGroup label::after {
   height: 5px;
   width: 9px;
-  border-left: 2px solid;
-  border-bottom: 2px solid;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
   
   transform: rotate(-45deg);
   
@@ -168,44 +171,46 @@ $hotpink: #CE446F;
   content: "";
 }
 
-.radioButton
-{
-     -webkit-appearance: none;
-     -moz-appearance: none;
-     appearance: none;
-     display: inline-block;
-     position: relative;
-     background-color: #E0C5AD;
-     color: #000;
-     top: 7px;
-     height: 25px;
-     width: 25px;
-     border: 1px solid #000;
-     border-radius: 50px;
-     cursor: pointer;     
-     margin-right: 7px;
-     outline: none;
+.radioButton {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: inline-block;
+  position: relative;
+  background-color: #E0C5AD;
+  color: #000;
+  top: 7px;
+  height: 25px;
+  width: 25px;
+  border: 1px solid #000;
+  border-radius: 50px;
+  cursor: pointer;     
+  margin-right: 7px;
+  outline: none;
 }
-.radioButton:checked::before
-{
-     position: absolute;
-     font: 13px/1 'Open Sans', sans-serif;
-     left: 7px;
-     top: 4px;
-     content: '\02143';
-     transform: rotate(40deg);
+.radioButton:checked::before {
+  content: '';
+  position: absolute;
+  font-style: normal;
+  height: 6px;
+  width: 10px;
+  border-left: 1px solid;
+  border-bottom: 1px solid;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  left: 6px;
+  top: 7px;
 }
-.radioButton:hover
-{
-     background-color: #E0C5AD;
+
+.radioButton:hover {
+  background-color: #E0C5AD;
 }
-.radioButton:checked
-{
-     background-color: #E0C5AD;
+.radioButton:checked {
+  background-color: #E0C5AD;
 }
 
 .resultContainer {
-  width: 400px;
+  width: 600px;
   margin: 0 auto;
   text-align: center;
   .title {
@@ -233,6 +238,10 @@ $hotpink: #CE446F;
     border: 0;
     padding: 0;
   }
+  .resultContainer {
+    width: calc(100% - 40px);
+    padding: 0 20px;
+  }
 
   .checkboxGroup {
     margin: 0;
@@ -242,7 +251,7 @@ $hotpink: #CE446F;
     }
   }
   .rsvpDetails {
-    width: calc(100% - 60px);
+    width: 100%;
   }
 
   .rsvpPalm {
@@ -251,11 +260,5 @@ $hotpink: #CE446F;
 
   .formGroup input[type='text'] {
     width: 100%;
-  }
-
-  .rsvpDetails {
-    width: 100%;
-    margin: 0;
-    margin-top: 30px;
   }
 }

@@ -26,8 +26,8 @@ const Details = () => {
         <p><a href="http://www.tchoupyard.com/" rel="noopener noreferrer" target="_blank">The Tchoup Yard</a></p>
         405 Third St, New Orleans, LA 70130
       </div>
-      <img src={leftPalm} className="leftPalm"/>
-      <img src={rightPalm} className="rightPalm"/>
+      <img src={leftPalm} rel="preload" className="leftPalm"/>
+      <img src={rightPalm} rel="preload" className="rightPalm"/>
     </div>
   </div>
   );

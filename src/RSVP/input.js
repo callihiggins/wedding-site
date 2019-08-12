@@ -63,7 +63,7 @@ const Input = (props) => {
           {props.isLoading ? 'Sending' : 'Send RSVP'}
       </button>
       {props.isSubmissionError && <p className="is-error">Something went wrong</p> }
-      <img src={rsvpPalm} alt="palm" className="rsvpPalm"/>
+      <img src={rsvpPalm} alt="palm" rel="preload" className="rsvpPalm"/>
     </div>
   )
 }

@@ -8,7 +8,7 @@ class Home extends Component {
     return (
       <>
         <div className={'container'}>
-          <img src={palm} className='mainPalm' />
+          <img src={palm} rel="preload" className='mainPalm' />
           <div className="mainText">
             <CalliLucasText />
           </div>

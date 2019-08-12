@@ -1,8 +1,9 @@
 $green: #1a3324;
 $mustard: #ffde40;
 $hotpink: #CE446F;
-$teal : #B06C97;
-$highlight: $hotpink;
+$teal: #60B2BF;
+$purple : #b06c97;
+$highlight: #000;;
 
 $duration: .2s;
 $distance: 8px;
@@ -146,11 +147,11 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
   }
 
   .bm-burger-bars-hover {
-    background: $mustard;
+    background: $purple;
   }
 
   .bm-menu {
-    background: $mustard;
+    background: $purple;
     color: black;
     padding: 20px;
   }
@@ -190,6 +191,20 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
     display: block;
     height: 40px;
     padding: 20px 0 10px 0;
+  }
+
+  .mobile-logo {
+    margin-left: 15px;
+    margin-top: 10px;
+    a {
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      font-size: 18px;
+      color: black;
+      text-decoration: none;
+    }
+    
+
   }
 
 }

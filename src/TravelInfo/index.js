@@ -49,7 +49,7 @@ class TravelInfo extends Component {
             <div className="travelInfo">
               <h3>House Rentals</h3>
               <p>Rentals are another great lodging option, especially if you are planning to travel with a group. We like <a href="https://www.vrbo.com/results?petIncluded=false&q=Lower%20Garden%20District%2C%20New%20Orleans%2C%20LA%2C%20USA&from-date=2019-10-03&to-date=2019-10-06" target="_blank">VRBO</a> to search available listings. AirBnB is another option, however we found their prices to be higher than VRBO's.</p>
-              <p>We recommend looking in the Lower Garden District if you want to be close to all wedding activities. However, with plenty of Uber's available, you can stay in any neighborhood you like.</p>
+              <p>We recommend looking in the Lower Garden District if you want to be close to all wedding activities. However, with plenty of Ubers available, you can stay in any neighborhood you like.</p>
             </div>
           </div>
           <div className="travelItem">
@@ -58,7 +58,7 @@ class TravelInfo extends Component {
             </div>
             <div className="travelInfo">
               <h3>Childcare</h3>
-              Wedding events will be for adults only. If you are interested in accommodations for child care, please let us know!
+              Wedding events will be for adults only. If you are interested in accommodations for childcare, please let us know!
             </div>
           </div>
           <div className="travelItem">
